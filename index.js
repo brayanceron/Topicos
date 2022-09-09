@@ -12,6 +12,7 @@ app.use(express.static('public'));
 app.set('view engine', 'hbs');
 const puerto=process.env.PORT;
 
+/*
 app.get('/home',function(req,res){
     res.render("home",{nombre:"Brayan"});
 });
@@ -28,17 +29,21 @@ app.get('/elements',function(req,res){
     //res.sendFile(__dirname+"/public/home.html");
     res.render("elements",{nombre:"Brayan"});
 })
-/*
+
 app.get('/index',function(req,res){
     res.sendFile(__dirname+"/public/index.html");
     //res.render("home");
-})*/
+})
 app.get('*',function(req,res){
     
     res.send("404 ! page no found");
 })
 
-
+*/
+app.get('*',function(req,res){
+    res.sendFile(__dirname+'/public/index.html')
+    //res.send("404 ! page no found");
+})
 
 app.listen(puerto,()=>{
     console.log("Hola Mundo");
